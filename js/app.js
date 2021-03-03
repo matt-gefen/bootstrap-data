@@ -46,4 +46,17 @@ yeezyBtn.addEventListener('click', ()=> {
 
 /*-------------------------------- Functions --------------------------------*/
 
+function appendDiv(quote, artist) {
+  let newDiv = document.createElement("div")
+  newDiv.innerHTML = 
+  `<div class="card ${artist.toLowerCase()}">
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>${quote}</p>
+        <footer class="blockquote-footer">${artist}</footer>
+      </blockquote>
+    </div>
+  </div>`
+  container.appendChild(newDiv)
+}
 

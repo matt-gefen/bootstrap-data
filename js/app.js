@@ -3,7 +3,7 @@
 
 
 /*-------------------------------- Variables --------------------------------*/
-
+const quotes = []
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -18,7 +18,10 @@ swiftBtn.addEventListener('click', ()=> {
     return response.json()
   })
   .then((data) => {
-    console.log(data)
+    let newQuote = {}
+    newQuote["artist"] = "T-Swift"
+    newQuote["quote"] = data.quote
+    quotes.push(newQuote)
   })
   .catch((err) => {
     console.log(err)
@@ -26,12 +29,15 @@ swiftBtn.addEventListener('click', ()=> {
 })
 
 yeezyBtn.addEventListener('click', ()=> {
-  fetch("https://api.kanasasdfye.rest/")
+  fetch("https://api.kanye.rest/")
   .then((response) => {
     return response.json()
   })
   .then((data) => {
-    console.log(data)
+    let newQuote = {}
+    newQuote["artist"] = "Yeezy"
+    newQuote["quote"] = data.quote
+    quotes.push(newQuote)
   })
   .catch((err) => {
     console.log(err)

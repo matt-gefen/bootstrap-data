@@ -1,6 +1,12 @@
 /*-------------------------------- Constants --------------------------------*/
 
-
+const colorScheme = {
+  dark: "",
+  change: function () {
+    colorScheme.dark = colorScheme.dark ? "" : "dark"
+    body.setAttribute("class", colorScheme.dark)
+  }
+}
 
 /*-------------------------------- Variables --------------------------------*/
 const quotes = []
@@ -9,7 +15,9 @@ const quotes = []
 /*------------------------ Cached Element References ------------------------*/
 const swiftBtn = document.getElementById("swiftButton")
 const yeezyBtn = document.getElementById("yeezyButton")
+const lightDarkBtn = document.getElementById("lightDarkButton")
 const container = document.getElementById("containerDiv")
+const body = document.getElementById("body")
 
 /*----------------------------- Event Listeners -----------------------------*/
 swiftBtn.addEventListener('click', ()=> {

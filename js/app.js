@@ -82,3 +82,14 @@ function deleteQuote(idx){
   quotes.splice(idx, 1)
   render()
 }
+
+function checkUserColorSchemePreference() {
+  if(
+    window.matchMedia("(prefers-color-scheme:dark)").matches && 
+    !colorScheme.dark
+  ) {
+    colorScheme.change()
+  }
+}
+
+checkUserColorSchemePreference()

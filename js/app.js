@@ -13,11 +13,29 @@ const container = document.getElementById("containerDiv")
 
 /*----------------------------- Event Listeners -----------------------------*/
 swiftBtn.addEventListener('click', ()=> {
-  console.log('T-Swift Rocks')
+  fetch("https://api.taylor.rest/")
+  .then((response) => {
+    return response.json()
+  })
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 })
 
 yeezyBtn.addEventListener('click', ()=> {
-  console.log('Yeezy Rocks')
+  fetch("https://api.kanasasdfye.rest/")
+  .then((response) => {
+    return response.json()
+  })
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 })
 
 /*-------------------------------- Functions --------------------------------*/

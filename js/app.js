@@ -1,5 +1,12 @@
 /*-------------------------------- Constants --------------------------------*/
-
+const colorScheme = {
+  dark: false,
+  change: function () {
+    colorScheme.dark = colorScheme.dark ? false : true;
+    const color = colorScheme.dark ? "dark" : "";
+    body.setAttribute("class", color)
+  },
+};
 
 
 /*-------------------------------- Variables --------------------------------*/
@@ -9,7 +16,9 @@ const quotes = []
 /*------------------------ Cached Element References ------------------------*/
 const swiftBtn = document.getElementById("swiftButton")
 const yeezyBtn = document.getElementById("yeezyButton")
+const lightDarkBtn = document.getElementById("lightDarkButton")
 const container = document.getElementById("containerDiv")
+const body = document.getElementById("body")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -47,8 +56,18 @@ yeezyBtn.addEventListener("click", () => {
   })
 })
 
+lightDarkBtn.addEventListener("click", colorScheme.change);
 
 /*-------------------------------- Functions --------------------------------*/
+
+function checkUserColorSchemePreference() {
+  if (
+    window.matchMedia("(prefers-color-scheme:dark)").matches &&
+    !colorScheme.dark
+  ) {
+    colorScheme.change();
+  }
+}
 
 function appendDiv(quote, artist, idx) {
   let newDiv = document.createElement("div")
@@ -76,3 +95,5 @@ function deleteQuote(idx) {
   quotes.splice(idx, 1)
   render()
 }
+
+checkUserColorSchemePreference()

@@ -54,6 +54,8 @@ yeezyBtn.addEventListener('click', ()=> {
   })
 })
 
+lightDarkBtn.addEventListener("click", colorScheme.change)
+
 /*-------------------------------- Functions --------------------------------*/
 
 function appendDiv(quote, artist, idx) {

@@ -48,7 +48,7 @@ yeezyBtn.addEventListener('click', ()=> {
 
 /*-------------------------------- Functions --------------------------------*/
 
-function appendDiv(quote, artist) {
+function appendDiv(quote, artist, idx) {
   let newDiv = document.createElement("div")
   newDiv.innerHTML = 
   `<div class="card ${artist.toLowerCase()}">
@@ -58,13 +58,19 @@ function appendDiv(quote, artist) {
         <footer class="blockquote-footer">${artist}</footer>
       </blockquote>
     </div>
+    <button id="delButton" class="btn" onClick={deleteQuote(${idx})}>X</button>
   </div>`
   container.appendChild(newDiv)
 }
 
 function render(){
   container.innerHTML = ""
-  quotes.forEach((quote) => {
-    appendDiv(quote["quote"], quote["artist"])
+  quotes.forEach((quote, idx) => {
+    appendDiv(quote["quote"], quote["artist"], idx)
   })
+}
+
+function deleteQuote(idx){
+  quotes.splice(idx, 1)
+  render()
 }

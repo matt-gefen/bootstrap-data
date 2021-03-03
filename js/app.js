@@ -22,6 +22,7 @@ swiftBtn.addEventListener('click', ()=> {
     newQuote["artist"] = "T-Swift"
     newQuote["quote"] = data.quote
     quotes.push(newQuote)
+    render()
   })
   .catch((err) => {
     console.log(err)
@@ -38,6 +39,7 @@ yeezyBtn.addEventListener('click', ()=> {
     newQuote["artist"] = "Yeezy"
     newQuote["quote"] = data.quote
     quotes.push(newQuote)
+    render()
   })
   .catch((err) => {
     console.log(err)
@@ -60,3 +62,9 @@ function appendDiv(quote, artist) {
   container.appendChild(newDiv)
 }
 
+function render(){
+  container.innerHTML = ""
+  quotes.forEach((quote) => {
+    appendDiv(quote["quote"], quote["artist"])
+  })
+}

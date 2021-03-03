@@ -219,6 +219,12 @@ h1 {
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  #containerDiv {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media only screen and (min-width: 1920px) {
   #containerDiv {
     grid-template-columns: repeat(5, 1fr);

@@ -18,6 +18,15 @@
 /*-------------------------------- Constants --------------------------------*/
 
 import { getRandomKanyeQuote, getRandomTaylorQuote } from "../data/quotes.js"
+const colorScheme = {
+  dark: "",
+  change: function () {
+    console.log(colorScheme.dark)
+    colorScheme.dark = colorScheme.dark ? "" : "dark"
+    document.querySelector("body").setAttribute("class", colorScheme.dark)
+    console.log(colorScheme.dark)
+  }
+}
 
 /*-------------------------------- Variables --------------------------------*/
 
@@ -27,14 +36,27 @@ const quotes = []
 
 const swiftBtn = document.querySelector("#swift-button")
 const yeezyBtn = document.querySelector("#yeezy-button")
+const lightDarkBtn = document.querySelector("#light-dark-button")
 const cardContainer = document.querySelector("#card-container")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
 swiftBtn.addEventListener("click", createQuote)
 yeezyBtn.addEventListener("click", createQuote)
+lightDarkBtn.addEventListener("click", colorScheme.change)
 
 /*-------------------------------- Functions --------------------------------*/
+
+checkUserColorSchemePreference()
+
+function checkUserColorSchemePreference() {
+  if (
+    window.matchMedia("(prefers-color-scheme:dark)").matches &&
+    !colorScheme.dark
+  ) {
+    colorScheme.change()
+  }
+}
 
 function createQuote(evt) {
   const artist = evt.target.id === "swift-button" ? "T-Swift" : "Yeezy"

@@ -21,7 +21,7 @@ import { getRandomKanyeQuote, getRandomTaylorQuote } from "../data/quotes.js"
 
 /*-------------------------------- Variables --------------------------------*/
 
-
+const quotes = []
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -31,12 +31,30 @@ const cardContainer = document.querySelector("#card-container")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-swiftBtn.addEventListener("click", () =>{
-  console.log(getRandomTaylorQuote())
-})
-
-yeezyBtn.addEventListener("click", () =>{
-  console.log(getRandomKanyeQuote())
-})
+swiftBtn.addEventListener("click", createQuote)
+yeezyBtn.addEventListener("click", createQuote)
 
 /*-------------------------------- Functions --------------------------------*/
+
+function createQuote(evt) {
+  const artist = evt.target.id === "swift-button" ? "T-Swift" : "Yeezy"
+  const newQuote = {
+    artist: artist,
+    text: artist === "Yeezy" ? getRandomKanyeQuote() : getRandomTaylorQuote()
+  }
+  console.log(newQuote)
+  quotes.push(newQuote)
+  console.log(quotes)
+  render()
+}
+
+function render() {
+  cardContainer.innerHTML = ""
+  quotes.forEach(quote => {
+    appendQuote(quote)
+  })
+}
+
+function appendQuote() {
+  console.log("I run!")
+}

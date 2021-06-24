@@ -14,7 +14,9 @@ html {
 /* resets font size to be 62.5% of the user preference - 
    in most browser configurations this will be 10px */
 :root {
-  font-size: 62.5%; 
+  font-size: 62.5%;
+  --cursive: 'Dancing Script', cursive;
+  --serif: 'Playfair Display', serif;
 }
 
 body {
@@ -33,6 +35,7 @@ h1 {
   font-weight: 700;
   margin: 1.2rem 0;
   padding: 1.2rem;
+  font-family: var(--serif);
 }
 
 .btn {
@@ -40,6 +43,7 @@ h1 {
   font-size: 2.4rem;
   font-weight: 600;
   margin: 1.2rem;
+  font-family: var(--cursive);
 }
 
 .header-btn-container > .btn {
@@ -53,10 +57,12 @@ h1 {
 
 .blockquote {
   font-size: 1.8rem;
+  font-family: var(--serif);
 }
 
 .blockquote > footer {
   font-size: 2.4rem;
+  font-family: var(--cursive);
 }
 
 .card-footer {

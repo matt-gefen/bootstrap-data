@@ -42,20 +42,19 @@ function createQuote(evt) {
     artist: artist,
     text: artist === "Yeezy" ? getRandomKanyeQuote() : getRandomTaylorQuote()
   }
-  console.log(newQuote)
   quotes.push(newQuote)
-  console.log(quotes)
   render()
 }
 
 function render() {
   cardContainer.innerHTML = ""
-  quotes.forEach(quote => {
-    appendQuote(quote)
+  quotes.forEach((quote, idx) => {
+    appendQuote(quote, idx)
   })
 }
 
-function appendQuote(quote) {
+function appendQuote(quote, idx) {
+  console.log(quote, idx)
   let quoteCard = document.createElement("div")
   quoteCard.classList.add("card", `${quote.artist.toLowerCase()}`)
   quoteCard.innerHTML =
@@ -66,6 +65,10 @@ function appendQuote(quote) {
         ${quote.artist}
       </footer>
     </blockquote>
-  </div>`
+  </div>
+  <footer class="card-footer">
+    <button class="btn delete-btn" id="delete-btn-${idx}">X</button>
+  </footer>
+  `
   cardContainer.appendChild(quoteCard)
 }

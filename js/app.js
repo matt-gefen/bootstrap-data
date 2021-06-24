@@ -17,7 +17,7 @@
 
 /*-------------------------------- Constants --------------------------------*/
 
-import { getRandomKanyeQuote, getRandomTaylorQuote } from "../data/quotes"
+import { getRandomKanyeQuote, getRandomTaylorQuote } from "../data/quotes.js"
 
 /*-------------------------------- Variables --------------------------------*/
 
@@ -32,11 +32,11 @@ const cardContainer = document.querySelector("#card-container")
 /*----------------------------- Event Listeners -----------------------------*/
 
 swiftBtn.addEventListener("click", () =>{
-  console.log("taylor is listening!")
+  console.log(getRandomTaylorQuote())
 })
 
 yeezyBtn.addEventListener("click", () =>{
-  console.log("kanye is listening!")
+  console.log(getRandomKanyeQuote())
 })
 
 /*-------------------------------- Functions --------------------------------*/

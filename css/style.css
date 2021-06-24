@@ -1,3 +1,69 @@
+html {
+  box-sizing: border-box;
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+   in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%; 
+}
+
+body {
+  align-items: center;
+  background-color: gray;
+  /* Use a system font, if none are available use an available sans-sarif font */
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.8rem; 
+  font-weight: 700;
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+}
+
+.btn {
+  border: none;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 1.2rem;
+}
+
+.header-btn-container > .btn {
+  margin: 1.2rem;
+}
+
+.card {
+  margin-top: 30px;
+  width: 85%;
+}
+
+.blockquote {
+  font-size: 1.8rem;
+}
+
+.blockquote > footer {
+  font-size: 2.4rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+}
+
 .yeezy {
   background-color: limegreen;
 }
@@ -5,3 +71,12 @@
 .t-swift {
   background-color: tomato;
 }
+
+#card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+

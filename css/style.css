@@ -80,3 +80,9 @@ h1 {
   width: 100%;
 }
 
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 325px;
+    margin: 30px 15px 0;
+  }
+}

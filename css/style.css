@@ -83,7 +83,7 @@ body {
 }
 
 body.dark {
-  --body-bg: #222e2b;
+  --body-bg: #22232b;
   --btn-text-color: #eaeaea;
   --card-text-color: #dedede;
   --header-bg: #005e9d;

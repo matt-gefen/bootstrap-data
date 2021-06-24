@@ -86,12 +86,12 @@ function addDeleteBtnListeners() {
 function render() {
   cardContainer.innerHTML = ""
   quotes.forEach((quote, idx) => {
-    appendQuote(quote, idx)
+    renderQuote(quote, idx)
   })
   addDeleteBtnListeners()
 }
 
-function appendQuote(quote, idx) {
+function renderQuote(quote, idx) {
   console.log(quote, idx)
   let quoteCard = document.createElement("div")
   quoteCard.classList.add("card", `${quote.artist.toLowerCase()}`)
@@ -110,6 +110,3 @@ function appendQuote(quote, idx) {
   `
   cardContainer.appendChild(quoteCard)
 }
-
-
-

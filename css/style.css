@@ -20,9 +20,60 @@ html {
 }
 
 body {
-  
+  --body-bg: #8a8b9b;
+  --btn-text-color: #2a2a2a;
+  --card-text-color: #3e3e3e;
+  --header-bg: #007bbe;
+  --header-text-color: #d8d8d8;
+  --inverted-btn-text-color: #eaeaea;
+  --light-dark-btn-bg: linear-gradient(
+    to right top,
+    #22232b,
+    #292b3a,
+    #303241,
+    #373949,
+    #3e4050,
+    #454757,
+    #4b4d5d,
+    #525464,
+    #5a5c6c,
+    #616374,
+    #696b7d,
+    #717385
+  );
+  --light-dark-btn-content: "Dark Mode";
+  --tay: linear-gradient(
+    to right top,
+    #d65db1,
+    #e861a2,
+    #f46993,
+    #fc7486,
+    #ff827b,
+    #ff8f73,
+    #ff9d6d,
+    #ffac69,
+    #ffbe66,
+    #ffd166,
+    #ffe469,
+    #f9f871
+  );
+  --ye: linear-gradient(
+    to right top,
+    #0069ff,
+    #0075fe,
+    #007ffc,
+    #0089f9,
+    #0092f4,
+    #009bf1,
+    #00a3eb,
+    #00aae5,
+    #00b3dc,
+    #00b9c9,
+    #00bdad,
+    #00bf8c
+  );
   align-items: center;
-  background-color: gray;
+  background-color: var(--body-bg);
   /* Use a system font, if none are available use an available sans-sarif font */
   display: flex;
   flex-direction: column;
@@ -31,16 +82,75 @@ body {
   margin: 0;
 }
 
+body.dark {
+  --body-bg: #222e2b;
+  --btn-text-color: #eaeaea;
+  --card-text-color: #dedede;
+  --header-bg: #005e9d;
+  --header-text-color: #d8d8d8;
+  --inverted-btn-text-color: #2a2a2a;
+  --light-dark-btn-bg: linear-gradient(
+    to right top,
+    #444655,
+    #595b6b,
+    #6f7181,
+    #868898,
+    #9ea0b0,
+    #acaebe,
+    #bbbccd,
+    #cacbdc,
+    #d2d4e5,
+    #dadced,
+    #e3e5f6,
+    #ebeeff
+  );
+  --light-dark-btn-content: "Light Mode";
+  --tay: linear-gradient(
+    to right top,
+    #440069,
+    #50006e,
+    #5d0072,
+    #690076,
+    #75007a,
+    #8a0073,
+    #9d006c,
+    #ac0064,
+    #bd134f,
+    #c52f39,
+    #c54a22,
+    #be6300
+  );
+  --ye: linear-gradient(
+    to right top,
+    #213555,
+    #213c59,
+    #22425d,
+    #254960,
+    #2a4f63,
+    #264c61,
+    #224860,
+    #1e455e,
+    #173757,
+    #18294e,
+    #1d1941,
+    #210632
+  );
+}
+
 h1 {
+  background-color: var(--header-bg);
+  font-family: var(--serif);
   font-size: 4.8rem; 
   font-weight: 700;
   margin: 1.2rem 0;
   padding: 1.2rem;
-  font-family: var(--serif);
+  text-align: center;
+  width: 100%;
 }
 
 .btn {
   border: none;
+  color: var(--btn-text-color);
   font-size: 2.4rem;
   font-weight: 600;
   margin: 1.2rem;
@@ -72,11 +182,21 @@ h1 {
 }
 
 .yeezy {
-  background-color: limegreen;
+  background-image: var(--ye);
 }
 
 .t-swift {
-  background-color: tomato;
+  background-image: var(--tay);
+}
+
+#light-dark-button {
+  background-image: var(--light-dark-btn-bg);
+}
+
+#light-dark-button::after {
+  border: none;
+  color: var(--inverted-btn-text-color);
+  content: var(--light-dark-btn-content);
 }
 
 #card-container {

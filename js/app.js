@@ -46,11 +46,27 @@ function createQuote(evt) {
   render()
 }
 
+function deleteQuote(evt) {
+  const idx = evt.target.id.replace("delete-btn-", "")
+  quotes.splice(idx, 1)
+  render()
+}
+
+function addDeleteBtnListeners() {
+  const deleteQuoteBtns = document.querySelectorAll(".delete-btn")
+  if(deleteQuoteBtns.length) {
+    deleteQuoteBtns.forEach(deleteQuoteBtn => {
+      deleteQuoteBtn.addEventListener("click", deleteQuote)
+    })
+  }
+}
+
 function render() {
   cardContainer.innerHTML = ""
   quotes.forEach((quote, idx) => {
     appendQuote(quote, idx)
   })
+  addDeleteBtnListeners()
 }
 
 function appendQuote(quote, idx) {
@@ -72,3 +88,6 @@ function appendQuote(quote, idx) {
   `
   cardContainer.appendChild(quoteCard)
 }
+
+
+

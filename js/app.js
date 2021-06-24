@@ -17,7 +17,10 @@
 
 /*-------------------------------- Constants --------------------------------*/
 
+import { getRandomKanyeQuote, getRandomTaylorQuote } from "../data/quotes"
 
+getRandomKanyeQuote()
+getRandomTaylorQuote()
 
 /*-------------------------------- Variables --------------------------------*/
 

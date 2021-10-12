@@ -1,5 +1,3 @@
-
-
 const kanyeQuotes = [
   "2024",
   "All you have to be is yourself",
@@ -63,7 +61,6 @@ const kanyeQuotes = [
   "I hear people say this person is cool and this person is not cool. People are cool. Man has never invented anything as awesome as a an actual person but sometimes we value the objects we create over life itself",
   "I love UZI. I be saying the same thing about Steve Jobs. I be feeling just like UZI",
   "I need an army of angels to cover me while I pull this sword out of the stone",
-  "I spoke to Dave Chapelle for two hours this morning. He is our modern day Socrates",
   "I was just speaking with someone that told me their life story and they used to be homeless.",
   "I watch Bladerunner on repeat",
   "I'm giving all Good music artists back the 50% share I have of their masters",
